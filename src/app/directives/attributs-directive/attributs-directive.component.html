@@ -1,0 +1,13 @@
+Pour créer une directive il faut faire : ng g directive nomdeladirective
+Faut que je revois ce truc
+<p appSize="120px">Je suis attributs directives</p>
+
+
+<p>Tout d’abord, nous remarquons le décorateur @Input(). Grâce à cette instruction, on pourra
+  envoyer une information à notre directive depuis le template (comme un attribut on ne peut
+  plus normal).
+  Forcément, nous l’utiliserons pour modifier la taille de l’élément qui en sera équipé.
+  Ensuite, le constructeur possède, ici, 2 paramètres inédits :
+  • Un objet ElementRef : qui nous permettra d’accéder au DOM de l’élément.
+  • Un objet Renderer2 : qui nous proposera des outils pour le manipuler.
+  Enfin, une fonction pour contrôler ce que l’utilisateur entrera comme informations.</p>

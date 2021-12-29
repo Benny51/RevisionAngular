@@ -1,0 +1,74 @@
+<p> Structural directives </p>
+
+<div>
+  - *ngFor
+  - *ngIf
+</div>
+
+<div>
+  <p>
+    *ngIf fait apparaître l’élément si l’expression introduite est vrai. Dans le cas contraire, elle
+    supprime complètement l’élément.
+  </p>
+  <p>
+    La suppression est justifiée si, par exemple, vous devez afficher un component selon une
+    condition bien précise. Si la condition n’est pas justifiée, le component n’est tout simplement
+    pas activé et cela économisera des ressources.
+  </p>
+</div>
+
+
+<div>
+  Pour faire un Else
+  if faut utiliser le ng template que vous allez voir si dessous
+
+</div>
+
+<div>
+  <p>Démonstrations</p>
+  <button (click)="changeStateToBoolForDisplayMessage()">Démonstrations</button>
+
+  <div *ngIf="isDisplay;else elseBlock">
+    Message affiche on passe dans le ng if
+  </div>
+
+  <ng-template #elseBlock>
+    On passe dans le else
+    Je déclare une ancre #ElseBlock que je relie avec le else du dessus
+  </ng-template>
+
+
+  <div>
+    <p>Explications</p>
+  <p>Dans l’ordre, voici ce qui a été appliqué :
+    1. Nous créons une balise « ng-template » sur laquelle nous lui assignons une « template
+    reference variable ». Son nom : « elseBlock » (vous pouvez lui donner n’importe quel
+    nom).
+    2. Au sein de notre « *ngIf », nous ajoutons un point-virgule suivi de l’instruction « else »
+    ainsi que du nom « elseBlock ».</p>
+
+  </div>
+</div>
+
+  <p>Ng For</p>
+
+  C'est un for, de rien captain obvious
+
+  <div *ngFor="let num of arrayOfNumber">
+    <p>{{num}}</p>
+  </div>
+
+  Array avec un indice
+
+  <div *ngFor="let numWithInd of arrayWithInd; index as i">
+    <p>{{numWithInd}} --> Indice {{i}}</p>
+  </div>
+
+Vous pouvez faire la même chose que (index as i) avec les informations suivantes :
+• first : de type boolean qui nous renseigne sur le fait si c’est la première itération ou
+non ;
+• last : même principe que first sauf que cela concerne la dernière itération ;
+• even : de type boolean qui nous renseigne sur le fait si l’indice de l’itération est pair ;
+• odd : même principe que even sauf que cela concerne les indices impairs.
+
+

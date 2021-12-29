@@ -1,0 +1,22 @@
+Il s'agit de 2 templates références : Cela sert pour consulter les propriétés d'un élément
+<p ref-nom_de_la_variable style="color: aqua">Je suis un template reference variables avec ref</p>
+<p #nom_de_la_variable2>Je suis un template reference variables avec #</p>
+<p>Avec le template référence, je consulte ici la couleur du p qui est aqua </p>
+
+
+<div>
+  <p>{{nom_de_la_variable.style.color}} --> On récupère la couleur </p>
+  <p>{{nom_de_la_variable.textContent}} --> On récupère le texte   </p>
+</div>
+
+<div>Par défaut, la valeur d’un template reference variable sera le DOM de l’élément sur
+  lequel il est attaché.
+  Cependant, nous pouvons altérer cela avec une directive13.
+  La dernière chose à analyser concerne leur accès dans le component. Pour obtenir un lien dans
+  la class de notre component, il faudra créer un attribut avec le décorateur
+  @ViewChild(‘nom_de_la_variable’).
+  Son accès, par contre, sera totalement garanti dès lors que le template se sera totalement
+  chargé. Nous utiliserons donc ngViewAfterInit.
+</div>
+
+

@@ -1,0 +1,17 @@
+Petit rappel : les components ne traitent pas avec la logique : ce sont les services ou les classes qui
+gèrent cette partie-là.
+
+Vérifications d'un numéro de téléphone par le service
+
+<input type="text" [(ngModel)]="phone" (ngModelChange)="verify()">
+
+<div>Vérifications Phone number : </div>
+
+<div *ngIf="correctPhoneNumber;else elseBlock ">
+  Votre numéro de téléphone est correcte
+</div>
+
+<ng-template #elseBlock>
+  Votre numéro de téléphone n'est pas correcte
+</ng-template>
+

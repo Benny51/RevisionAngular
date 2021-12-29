@@ -1,0 +1,18 @@
+<p> L'event binding : HTML --> TS </p>
+<p> Donc Vue --> Component</p>
+
+<p>Utilisation de l'event Binding : </p>
+
+<Button (click)="displayMessage()">
+  Cliquer pour afficher le message par event binding
+</Button>
+
+<!-- I catch if the boolean is true and i display the message -->
+
+<div *ngIf="isMessageDisplayed">
+  {{messagebyInterpolation}}
+</div>
+
+<p> Event binding avec $event</p>
+
+<button (click)="try($event)">Click</button>

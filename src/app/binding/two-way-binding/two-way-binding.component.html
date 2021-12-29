@@ -1,0 +1,23 @@
+<p>two-way-binding or 'banana in a box' : Relation Bidirectionelle entre la vue et le modèle</p>
+
+<div>
+  <p> Si l’on devait décomposer cette manière de faire, on remarquera 2 choses :</p>
+  <p> • [] qui définit une valeur à une propriété ;</p>
+  <p> • () qui envoie une valeur de la vue au modèle.</p>
+</div>
+
+<p>Exemple de l'implémentation du two way bindings</p>
+
+Ne pas oublier d'importer dans le app.modules.ts le FormModules (dans les imports)
+
+<div>
+  <input type="text" [(ngModel)]="name">
+  <p>{{name}}</p>
+</div>
+
+<div>
+  Cette écriture fonctionne UNIQUEMENT si l’on se trouve EN DEHORS d’une balise form. Dans le
+  cas contraire, on doit équiper le champ d’un attribut name.
+</div>
+
+Les données changeront automatiquement (vue et modèle)

@@ -1,0 +1,29 @@
+<div>
+  Que cela soit pour ajouter, supprimer, modifier ou encore lire des données pour former un
+  véritable CRUD, nous pouvons dire que les formulaires sont tout simplement omniprésents
+  dans les applications ou sites web.
+</div>
+
+<div>Création du premier type de formulaire </div>
+
+<div>Pour que le formulaire fonctionne bien, il faut rajouter la directive ngForm dans la template reference variable
+     qui se trouve à l'intérieur de la balise form.
+</div>
+
+<div>
+  Dans le cas où vous souhaiteriez voir si un champ précis est valide, il faut rajouter, toujours
+  au sein de ce champ, un template reference variable qui vaudra ngModel.
+</div>
+
+<form #form="ngForm">
+  <input type="text" name="first_name" [(ngModel)]="first_name" #firstNameElement="ngModel" required>
+  <br>
+  <br>
+  <input type="text" name="dateOfBirth" [(ngModel)]="dateOfBirth" #dateElement="ngModel" required>
+  <!-- pattern = 'd{2}/d{2}/d{4}' -->
+  <div *ngIf="firstNameElement.invalid || dateElement.invalid">Les champs sont invalide</div>
+  <input type="submit" [disabled]="form.invalid">
+</form>
+
+<hr/>
+
